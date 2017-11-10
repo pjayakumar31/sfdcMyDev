@@ -1,0 +1,43 @@
+<apex:page Controller="UserCreatorController"  showHeader="true" standardStylesheets="false" sidebar="false"  applyBodyTag="false" docType="html-5.0">
+  <apex:slds /> 
+  <div class="slds-scope"> 
+  <apex:form >
+  <apex:pageblock >
+  <apex:pageblockSection > 
+  <apex:outputLabel >Employee: </apex:outputLabel>
+  <input type="text" name="Emp" id="Emp" align="left"/>
+  <apex:commandButton value="Search" action="{!SimilarEmp}"/>
+  </apex:pageblockSection>
+
+  <apex:pageblockSection title="similar" rendered="{!simempren}" columns="1"> 
+    <apex:pageBlockTable value="{!SimEmplist}" var="sim">
+  <apex:column value="{!sim.EmpName__c}"/>
+  <apex:column value="{!sim.Manager__c}"/>
+  <apex:column value="{!sim.Department__c}"/>
+  <apex:column value="{!sim.Emailid__c}"/> 
+  <apex:column > <input type="radio" value="{!sim.name}" name="simemp" /> </apex:column>
+   
+  </apex:pageBlockTable> 
+  <apex:commandButton value="Find Peers" action="{!getfindpeers}"/>
+  </apex:pageblocksection>
+  
+  <apex:pageblocksection title="No Employee" rendered="{!noempren}" columns="1"> 
+  <h2>User not present in Employee records</h2>
+  </apex:pageblockSection>
+  
+  <apex:pageblocksection title="Peers" rendered="{!peerempren}" columns="1"> <!-- {!finalsim}{!employee.manager__r.EmpName__c} -->
+  <apex:pageblockTable value="{!Peer}" var="p">
+  <apex:column value="{!p.Name}"/>
+  <apex:column value="{!p.Title}"/>
+ <apex:column ><input type="radio" value="{!p.lastname}" name="peerid" />  </apex:column>
+   </apex:pageblockTable>
+   <apex:commandButton value="Create User" action="{!getuserCreator}"/> 
+  </apex:pageblockSection>
+
+
+
+
+  </apex:pageblock> 
+  </apex:form>
+  </div>
+</apex:page>

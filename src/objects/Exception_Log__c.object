@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Stores the exception details.</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Class_Method_Name__c</fullName>
+        <description>Contains the class and method name where the exception raised</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the class and method name where the exception raised</inlineHelpText>
+        <label>Class Method Name</label>
+        <length>250</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Error_Details__c</fullName>
+        <description>Contains the Stack Trace Details of the exception.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the Stack Trace Details of the exception.</inlineHelpText>
+        <label>Error Details</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Error_Message__c</fullName>
+        <description>Contains the details of error occured.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the details of error occured.</inlineHelpText>
+        <label>Error Message</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Exception_Type__c</fullName>
+        <description>Contains the type of exception thrown.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the type of exception thrown.</inlineHelpText>
+        <label>Exception Type</label>
+        <length>120</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Object_Name__c</fullName>
+        <description>Contains the name of the object.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the name of the object.</inlineHelpText>
+        <label>Object Name</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Id__c</fullName>
+        <description>Contains the Record Id for which the error was thrown.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the Record Id for which the error was thrown.</inlineHelpText>
+        <label>Record Id</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Exception Log</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Error_Details__c</columns>
+        <columns>Error_Message__c</columns>
+        <columns>Exception_Type__c</columns>
+        <columns>Object_Name__c</columns>
+        <columns>Record_Id__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>EL-{0000000}</displayFormat>
+        <label>Exception Log Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Exception Logs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+</CustomObject>

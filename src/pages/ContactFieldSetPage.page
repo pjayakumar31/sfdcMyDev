@@ -1,0 +1,21 @@
+<apex:page StandardController="Contact">
+    <apex:pageblock >
+        <apex:repeat value="{!$ObjectType.Contact.FieldSets.FirstFieldSet}" var="con">
+            <apex:facet name="header"> {!con.label}</apex:facet>
+            <apex:outputText value="{!Contact[con]}"/>
+        </apex:repeat>
+    </apex:pageblock>
+    <apex:pageblock >
+        <apex:pageblockTable value="{!$ObjectType.Contact.FieldSets.FirstFieldSet}" var="f">
+            <apex:column value="{!f}">
+                <apex:facet name="header">Name</apex:facet>
+            </apex:column>  
+            <apex:column value="{!f.Label}">
+                <apex:facet name="header">Label</apex:facet>
+            </apex:column>  
+            <apex:column value="{!f.Type}">
+                <apex:facet name="header">Type</apex:facet>
+            </apex:column>    
+        </apex:pageblockTable>
+    </apex:pageblock>  
+</apex:page>

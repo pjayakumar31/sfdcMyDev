@@ -1,0 +1,86 @@
+<apex:page sidebar="false" showHeader="false" standardController="Contact" tabstyle="Contact" id="Component" Extensions="ContactExtension" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <script>
+  function phonevalidation()
+  {
+  alert("phonevalidation function called");
+var ph=  document.getElementById('Component:theform:thepageblock:thesection:phon').value;
+alert("value : "+ph);
+var t='/^[7-9][0-9]{9}/';
+if(t.matches(ph))
+{
+alert("valid number");
+return true;
+}
+else{
+alert('enter valid number');
+return true;
+
+}
+}
+  </script>
+  <apex:sectionHeader title="Contact Edit" subtitle="New Contacts"/><br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contacts not associated with accounts are private and cannot be viewed by other users or included in reports.
+  <apex:form id="theform">
+  <apex:pageBlock tabStyle="Contact" title="Contact edit" id="thepageblock">
+  <apex:pageMessages />
+  <apex:pageBlockButtons >
+  <apex:commandButton value="Save" action="{!Save}"/>
+    <apex:commandButton value="Save&New" action="{!saveAndNew}"/>
+       <apex:commandButton value="Cancel" action="{!Cancel}"/> 
+       <apex:commandButton value="new" action="{!NewContacts}"/> 
+  </apex:pageBlockButtons> 
+   
+   <apex:pageBlockSection title="Contact Information"  columns="2" id="thesection">
+  <apex:pageBlocksectionItem >
+   <apex:outputlabel value="Contact Owner"/>
+   <apex:outputtext value="{!$User.FirstName} {!$User.LastName}"/>
+   </apex:pageBlocksectionItem>
+   <apex:inputField value="{!newContact.Phone}"  id="phon" onchange="phonevalidation();"/>
+<apex:pageBlockSectionItem >
+<apex:outputlabel value="First Name"/>
+       <apex:outputpanel >    
+    <apex:inputfield value="{!newContact.Salutation}"  />
+    <apex:inputfield value="{!newContact.FirstName}" />
+    </apex:outputpanel> 
+    </apex:pageBlockSectionItem>
+    <apex:inputField value="{!newContact.HomePhone}"/>
+    <apex:inputField value="{!newContact.LastName}"/>
+     <apex:inputField value="{!newContact.MobilePhone}"/>
+   <apex:inputField value="{!newContact.AccountId}"/>
+    <apex:inputField value="{!newContact.OtherPhone}"/>
+  <apex:inputField value="{!newContact.ReportsToId}"/>
+  <apex:inputField value="{!newContact.Title}"/>
+  <apex:inputField value="{!newContact.Fax}"/>
+  <apex:inputField value="{!newContact.Department}"/>
+  <apex:inputField value="{!newContact.Email}"/>
+  <apex:inputField value="{!newContact.Birthdate}"/>
+  <apex:inputField value="{!newContact.AssistantName}"/>
+  <apex:inputField value="{!newContact.AssistantPhone}"/> 
+  <apex:inputField value="{!newContact.LeadSource}"/>  
+  </apex:pageBlockSection> 
+  <apex:pageBlockSection title="Address Information">
+  
+<apex:inputField value="{!newContact.MailingStreet}"/>
+    <apex:inputField value="{!newContact.OtherStreet}"/> 
+    <apex:inputField value="{!newContact.MailingCity}"/>
+    <apex:inputField value="{!newContact.OtherCity}"/>
+    <apex:inputField value="{!newContact.MailingState}"/>    
+    <apex:inputField value="{!newContact.OtherState}"/>   
+     <apex:inputField value="{!newContact.MailingPostalCode}"/>    
+    <apex:inputField value="{!newContact.OtherPostalCode}"/>
+     <apex:inputField value="{!newContact.MailingCountry}"/>    
+    <apex:inputField value="{!newContact.OtherCountry}"/>
+   </apex:pageBlockSection>
+   
+   
+ <apex:pageBlockSection title="Additional Information">
+        <apex:inputField value="{!newContact.Languages__c}" />
+        <apex:inputField value="{!newContact.Level__c}"/>    
+    </apex:pageBlockSection> 
+     <apex:pageBlockSection title="Description Information">
+     <apex:inputField value="{!newContact.Description}"/>
+     </apex:pageBlockSection>   
+  </apex:pageBlock></apex:form>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

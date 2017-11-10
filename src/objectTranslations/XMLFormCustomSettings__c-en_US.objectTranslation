@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>XMLFormCustomSettings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>XMLFormCustomSettings</value>
+    </caseValues>
+    <fields>
+        <label><!-- DefaultValue --></label>
+        <name>DefaultValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- FieldGroup --></label>
+        <name>FieldGroup__c</name>
+    </fields>
+    <fields>
+        <label><!-- FieldLabel --></label>
+        <name>FieldLabel__c</name>
+    </fields>
+    <fields>
+        <label><!-- FieldValue --></label>
+        <name>FieldValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- ParentTagName --></label>
+        <name>ParentTagName__c</name>
+    </fields>
+    <fields>
+        <label><!-- TagName --></label>
+        <name>TagName__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

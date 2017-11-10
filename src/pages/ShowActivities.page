@@ -1,0 +1,12 @@
+<apex:page StandardController="Account" extensions="ShowActivitiesController">
+  <apex:pageblock >
+      <apex:pageblockTable value="{!actList}" var="a">
+          <apex:column headerValue="Id" value="{!a.Id}"/>
+          <apex:column headerValue="What Id" value="{!a.WhatId}"/>      
+      </apex:pageblockTable>
+      <apex:pageblockTable value="{!actHistList}" var="a">
+          <apex:column headerValue="Id" value="{!a.Id}"/>
+          <apex:column headerValue="What Id" value="{!a.WhatId}"/>      
+      </apex:pageblockTable>
+  </apex:pageblock>  
+</apex:page>

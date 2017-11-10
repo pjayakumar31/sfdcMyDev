@@ -1,0 +1,37 @@
+<apex:page controller="paginationcontroller">
+  <apex:form >
+ <apex:pageBlock >
+ <apex:pageblockButtons location="top">   <apex:commandButton action="{!previous}" value="previous"/>
+ <apex:commandButton action="{!next}" value="next"/>
+ <apex:commandButton action="{!beginning}" value="begin"/> 
+ <apex:commandButton action="{!end}" value="end"/>
+ </apex:pageblockButtons>
+
+ <apex:pageblocksection >
+ <apex:pageblocktable value="{!projectList}" var="pro">
+ <apex:column headerValue="Project Number" ><apex:outputLink value="/apex/defectreportwithpagination?id={!pro.Id}" >{!pro.Name} </apex:outputLink></apex:column>
+ <apex:column headerValue="Project Name" value="{!pro.Project_Name__c}"/>
+ <apex:column headervalue="Phase" value="{!pro.Phase__c}"/>
+ </apex:pageblocktable>
+ </apex:pageblocksection>
+ 
+ <apex:pageblocksection rendered="{!srender}" columns="1" id="def">
+ <apex:pageblocksection rendered="{!lrender}">
+<c:PaginatedDefectComponent severity="Low" defects="{!lowlist}"  /> 
+ </apex:pageblocksection>
+ 
+ <apex:pageblocksection rendered="{!mreneder}">
+<c:PaginatedDefectComponent severity="Medium" defects="{!mediumlist}"  /> 
+ </apex:pageblocksection>
+
+ <apex:pageblocksection rendered="{!hrender}">
+<c:PaginatedDefectComponent severity="High" defects="{!highlist}"  /> 
+ </apex:pageblocksection>
+
+ 
+ 
+ </apex:pageblocksection>
+ 
+ </apex:pageBlock>
+ </apex:form>
+ </apex:page>

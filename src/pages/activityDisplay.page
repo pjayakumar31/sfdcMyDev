@@ -1,0 +1,10 @@
+<apex:page standardController="Account" extensions="activityDisplayController">
+  
+  <apex:pageBlock >
+      <apex:outputText value="{!acc.name}"></apex:outputText>
+      <apex:pageBlockTable value="{!actList}" var="act">
+          <apex:column value="{!act.id}"/>
+          <apex:column value="{!act.Activity_Territory__c}" />
+      </apex:pageBlockTable>
+  </apex:pageBlock>
+</apex:page>

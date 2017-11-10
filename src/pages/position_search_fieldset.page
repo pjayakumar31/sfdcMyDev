@@ -1,0 +1,86 @@
+<apex:page controller="psf_controller">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+
+<apex:commandButton value="list" action="{!list_positions}"/>
+<apex:outputpanel >
+<apex:pageBlockSectionItem >
+<apex:outputLabel > Position </apex:outputLabel>
+<apex:selectList value="{!positionId}" size="1" id="picklistid" >
+<apex:selectOptions value="{!pos}"> </apex:selectOptions>
+</apex:selectList>
+</apex:pageBlockSectionItem>
+<apex:commandButton value="go" action="{!showdetail}"/>
+
+
+</apex:outputpanel>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+
+<apex:pageblock rendered="{!searchrender}" >
+
+<apex:pageblockSection title="information">
+<apex:repeat value="{!$objecttype.Position__c.fieldsets.information}" var="f">
+<apex:outputField value="{!obj[f.fieldpath]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+<apex:pageblockSection title="compensation">
+<apex:repeat value="{!$objecttype.Position__c.fieldsets.compensation}" var="f">
+<apex:outputField value="{!obj[f.fieldpath]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+<apex:pageblockSection title="Description">
+<apex:repeat value="{!$objecttype.Position__c.fieldsets.Description}" var="f">
+<apex:outputField value="{!obj[f.fieldpath]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+<apex:pageblockSection title="Required_Languages">
+<apex:repeat value="{!$objecttype.Position__c.fieldsets.Required_Languages}" var="f">
+<apex:outputField value="{!obj[f.fieldpath]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+</apex:pageblock>
+
+
+<apex:pageBlock rendered="{!listrender}">
+    <apex:pageBlockTable id="table" var="pos" value="{!poslist}">
+        
+        <apex:repeat var="f" value="{!$ObjectType.Position__c.FieldSets.information}">
+            <apex:column headerValue="{!f.label}">
+                <apex:outputField value="{!pos[f]}" />
+            </apex:column>
+        </apex:repeat>
+        
+        <apex:repeat var="f" value="{!$ObjectType.Position__c.FieldSets.compensation}">
+            <apex:column headerValue="{!f.label}">
+                <apex:outputField value="{!pos[f]}" />
+            </apex:column>
+        </apex:repeat>
+
+        <apex:repeat var="f" value="{!$ObjectType.Position__c.FieldSets.Description}">
+            <apex:column headerValue="{!f.label}">
+                <apex:outputField value="{!pos[f]}" />
+            </apex:column>
+        </apex:repeat>
+        
+        <apex:repeat var="f" value="{!$ObjectType.Position__c.FieldSets.Required_Languages}">
+            <apex:column headerValue="{!f.label}">
+                <apex:outputField value="{!pos[f]}" />
+            </apex:column>
+        </apex:repeat>
+
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+
+
+
+</apex:form>
+</apex:page>

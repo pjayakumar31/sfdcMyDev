@@ -1,0 +1,52 @@
+<apex:page controller="DefectController" id="com">
+
+<apex:form id="theform"> 
+<script type="text/javascript">
+
+function checklist()
+{
+alert('java script method called');
+var pickvalue=document.getElementById('com:theform:pbform:pbs:pbsi:picklistid').value;
+
+if(pickvalue==''){ 
+alert('select the project number ');
+return false;
+}
+return true;
+}
+
+</script>
+<apex:pageblock id="pbform">
+  
+<apex:pageblocksection id="pbs" >
+<center><apex:commandbutton value="List" action="{!defList}" rerender="report" onclick="checklist();"/></center>
+<apex:pageblockSectionItem id="pbsi"> 
+<apex:outputLabel > Project : </apex:outputLabel>
+<apex:selectList value="{!projectnumber}" size="1" id="picklistid" >
+<apex:selectOptions value="{!projs}"> </apex:selectOptions>
+</apex:selectList>
+</apex:pageblockSectionItem>
+ 
+
+</apex:pageblocksection>
+
+
+<apex:outputPanel id="report">
+<apex:pageblocksection title="low" rendered="{!lrender}">
+<c:DefectComponent severity="Low" defects="{!lowList}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection title="medium" rendered="{!mreneder}">
+<c:DefectComponent severity="Medium" defects="{!mediumList}"/>
+</apex:pageblocksection>
+
+<apex:pageblocksection title="high" rendered="{!hrender}">
+<c:DefectComponent severity="High" defects="{!highList}"/>
+</apex:pageblocksection>
+
+</apex:outputPanel>
+
+</apex:pageblock>
+
+</apex:form>
+</apex:page>
