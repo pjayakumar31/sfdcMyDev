@@ -6,6 +6,7 @@ global with sharing class AmountCalculator implements Database.Batchable<sObject
           } 
           
           global Database.QueryLocator start(Database.BatchableContext BC){      
+            System.debug('Test');
             return Database.getQueryLocator(query);  
              }    
             
