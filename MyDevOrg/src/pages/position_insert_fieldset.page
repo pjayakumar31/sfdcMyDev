@@ -1,0 +1,32 @@
+<apex:page controller="positioninsertfieldsetcontroller" >
+<apex:form >
+<center><apex:commandButton value="save" action="{!save}" /></center>
+<apex:pageBlock >
+
+<apex:pageblockSection title="information">
+<apex:repeat value="{!$objecttype.Position__c.fieldsets.information}" var="f">
+<apex:inputField value="{!obj[f.fieldpath]}" required="{!or(f.dbrequired , f.required)}"/>
+</apex:repeat>
+</apex:pageblockSection>
+
+<apex:pageblockSection title="compensation">
+<apex:repeat value="{!$objecttype.Position__c.fieldsets.compensation}" var="f">
+<apex:inputField value="{!obj[f.fieldpath]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+<apex:pageblockSection title="Description">
+<apex:repeat value="{!$objecttype.Position__c.fieldsets.Description}" var="f">
+<apex:inputField value="{!obj[f.fieldpath]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+<apex:pageblockSection title="Required_Languages">
+<apex:repeat value="{!$objecttype.Position__c.fieldsets.Required_Languages}" var="f">
+<apex:inputField value="{!obj[f.fieldpath]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

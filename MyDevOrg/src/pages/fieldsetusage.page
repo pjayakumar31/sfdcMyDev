@@ -1,0 +1,22 @@
+<apex:page controller="positioncontroller">
+<apex:form >
+<apex:commandButton action="{!showDetail}" value="show detail"/>
+
+<apex:pageBlock >
+<apex:pageBlockSection >
+<apex:pageBlockSectionItem >
+<apex:outputLabel > Position : </apex:outputLabel>
+<apex:selectList value="{!positionId}" size="1" id="picklistid" >
+<apex:selectOptions value="{!pos}"> </apex:selectOptions>
+</apex:selectList>
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+<apex:pageBlockSection >
+<apex:repeat value="{!$Objecttype.Position__c.fieldsets.sample}" var="f">
+<apex:inputField value="{!sam[f.fieldPath]}" required="{!OR(f.required, f.dbrequired)}"/> 
+</apex:repeat>
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

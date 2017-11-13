@@ -1,0 +1,19 @@
+<apex:component controller="paginationcontroller">
+<apex:attribute name="severity" assignTo="{!stype}" type="String" required="true" description="It specifies the Severity Level"/>
+<apex:attribute name="defects" type="Defect__c[]" required="true" description="defect list"/>
+
+
+{!severity}
+<apex:pageBlockSection >
+<apex:pageblockTable value="{!defects}" var="def">
+
+<apex:column headervalue="Defect ID"> <apex:outputlink value="/{!def.Id}" target="_blank">{!def.name}</apex:outputlink></apex:column>
+<apex:column headervalue="Defect Name"><apex:outputlink value="/{!def.Id}" target="_blank">{!def.Defect_Name__c}</apex:outputlink></apex:column>
+<apex:column headervalue="Description" value="{!def.Description__c}"/>
+<apex:column headervalue="Type" value="{!def.Type__c}"/>
+<apex:column headervalue="Project Name" ><apex:outputlink value="/{!def.Project__c}" target="_blank">{!def.project__r.Project_Name__c}</apex:outputlink></apex:column>
+<apex:column headervalue="Created Date" value="{!def.CreatedDate}"/>
+<apex:column headervalue="Created By" value="{!def.CreatedById}"/>
+</apex:pageblocktable>
+</apex:pageBlockSection>
+</apex:component>

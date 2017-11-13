@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>testing</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>testing</value>
+    </caseValues>
+    <fields>
+        <label><!-- Is Apex --></label>
+        <name>Is_Apex__c</name>
+    </fields>
+    <fields>
+        <label><!-- firstname --></label>
+        <name>firstname__c</name>
+    </fields>
+    <fields>
+        <label><!-- units --></label>
+        <name>units__c</name>
+    </fields>
+    <fields>
+        <label><!-- valid --></label>
+        <name>valid__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

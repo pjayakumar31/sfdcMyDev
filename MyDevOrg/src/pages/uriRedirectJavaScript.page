@@ -1,0 +1,16 @@
+<apex:page StandardController="Position__c" Extensions="uriRedirectJavaScript">
+    <script>
+        var type = '{!type}';
+        var landingPage;
+        var posid = '{!positionId}';
+        if(type == "Full Time"){
+            landingPage = '/apex/position_insert_fieldset?id={!positionId}';
+            window.open(landingPage ,'_self');
+        }else{
+            landingPage = '/'+posid+'?nooverride=0';
+            //alert(landingPage);
+            window.open('https://jaya31-dev-ed.my.salesforce.com/home/home.jsp');
+            window.location.href = landingPage;
+        }    
+    </script> 
+</apex:page>

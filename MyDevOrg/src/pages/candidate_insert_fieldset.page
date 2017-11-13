@@ -1,0 +1,36 @@
+<apex:page controller="candidateinsertfieldsetcontroller" >
+<apex:form >
+<center><apex:commandButton value="save" action="{!save}" /></center>
+<apex:pageBlock >
+
+<apex:pageblockSection title="Information" >
+<apex:repeat value="{!$objecttype.Candidate__c.fieldsets.information}" var="f">
+<apex:inputField value="{!obj[f]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+<apex:pageblockSection title="Address">
+<apex:repeat value="{!$objecttype.Candidate__c.fieldsets.Address}" var="f">
+<apex:inputField value="{!obj[f]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+<apex:pageblockSection title="Employment">
+<apex:repeat value="{!$objecttype.Candidate__c.fieldsets.Employment}" var="f">
+<apex:inputField value="{!obj[f]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+<apex:pageblockSection title="Additional Details" >
+<apex:repeat value="{!$objecttype.Candidate__c.fieldsets.Additional_Details}" var="f">
+<apex:inputField value="{!obj[f]}" />
+</apex:repeat>
+</apex:pageblockSection>
+
+
+
+ 
+ 
+ </apex:pageblock>
+ </apex:form>
+ </apex:page>

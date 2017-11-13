@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Trainee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Trainees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+        <relationshipLabel><!-- Trainees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Trainee1 --></label>
+        <name>Trainee1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trainee2 --></label>
+        <name>Trainee2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trainee3 --></label>
+        <name>Trainee3__c</name>
+    </fields>
+    <fields>
+        <label><!-- TrainerId --></label>
+        <name>TrainerId__c</name>
+        <relationshipLabel><!-- TrainerId --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

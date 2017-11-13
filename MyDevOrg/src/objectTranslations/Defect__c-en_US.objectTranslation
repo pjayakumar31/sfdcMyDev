@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Defect</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Defects</value>
+    </caseValues>
+    <fields>
+        <label><!-- Defect Name --></label>
+        <name>Defect_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Project --></label>
+        <name>Project__c</name>
+        <relationshipLabel><!-- Defects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Severity --></label>
+        <name>Severity__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Arithmetic Defect</masterLabel>
+            <translation><!-- Arithmetic Defect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interfacing Defect</masterLabel>
+            <translation><!-- Interfacing Defect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logic Defect</masterLabel>
+            <translation><!-- Logic Defect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Threading Programming Defect</masterLabel>
+            <translation><!-- Multi-Threading Programming Defect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Performance Defect</masterLabel>
+            <translation><!-- Performance Defect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resource Defect</masterLabel>
+            <translation><!-- Resource Defect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Syntax Defect</masterLabel>
+            <translation><!-- Syntax Defect --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- rupee --></label>
+        <name>rupee__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

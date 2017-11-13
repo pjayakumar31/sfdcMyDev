@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Exception Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Exception Logs</value>
+    </caseValues>
+    <fields>
+        <help><!-- Contains the class and method name where the exception raised --></help>
+        <label><!-- Class Method Name --></label>
+        <name>Class_Method_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contains the Stack Trace Details of the exception. --></help>
+        <label><!-- Error Details --></label>
+        <name>Error_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contains the details of error occured. --></help>
+        <label><!-- Error Message --></label>
+        <name>Error_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contains the type of exception thrown. --></help>
+        <label><!-- Exception Type --></label>
+        <name>Exception_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contains the name of the object. --></help>
+        <label><!-- Object Name --></label>
+        <name>Object_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contains the Record Id for which the error was thrown. --></help>
+        <label><!-- Record Id --></label>
+        <name>Record_Id__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>
