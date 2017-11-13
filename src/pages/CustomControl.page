@@ -1,0 +1,112 @@
+<apex:page controller="CustomControlController" id="Component" >
+<!-- Component.fid.pbid.pbs.pbsi.it -->
+<apex:form id="fid">
+<script type="/text/javascript">
+function reset()
+{
+	alert("clear method called");
+	//document.getElementById('{!$Component.fid.pbid.pbs.pbsi.it}').value="";
+
+}
+
+</script>
+<apex:pageblock title="CustomSearch"  id="pbid">
+<apex:pageblockButtons id="pbbid">
+<apex:commandButton value="search" action="{!search}" rerender="result"/>
+<apex:commandButton value="reset"  onclick="reset();" rerender="none"/>
+<apex:commandButton value="close" action="{!close}"/>
+</apex:pageblockButtons>
+<apex:pageblocksection columns="1" id="pbs">
+
+<apex:pageblocksectionItem id="pbsi">
+<apex:outputLabel value="Search By" />
+<apex:inputtext size="20" value="{!Name}" id="it" />
+</apex:pageblocksectionItem>
+<apex:outputPanel >
+<apex:outputLabel >cases</apex:outputLabel>
+<apex:inputcheckbox label="cases" value="{!cases}"/>
+<apex:outputLabel >leads</apex:outputLabel>
+<apex:inputcheckbox label="leads" value="{!leads}"/>
+<apex:outputLabel >opportunities</apex:outputLabel>
+<apex:inputcheckbox label="opportunities" value="{!opportunities}"/>
+<apex:outputlabel >contacts</apex:outputlabel>
+<apex:inputcheckbox value="{!contacts}"/>
+<apex:outputlabel >accounts</apex:outputlabel>
+<apex:inputcheckbox value="{!accounts}" disabled="true"/>
+</apex:outputPanel>
+
+</apex:pageblocksection>
+
+<apex:outputpanel id="result">
+
+<apex:pageblocksection columns="1" rendered="{!crender}" title="Case">
+
+<apex:pageblocktable value="{!caseList}" var="obj" >
+<apex:column headervalue="casenumber" ><apex:outputlink value="/{!obj.Id}">{!obj.casenumber}</apex:outputlink></apex:column>
+<apex:column headervalue="Account name" ><apex:outputlink value="/{!obj.AccountId}">{!obj.Account.Name}</apex:outputlink></apex:column>
+<apex:column headervalue="Status" value="{!obj.Status}"/>
+<apex:column headervalue="CreatedBy" value="{!obj.CreatedById}"/>
+<apex:column headervalue="CreatedDate" value="{!obj.CreatedDate}"/>
+</apex:pageblocktable>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="1" rendered="{!lrender}" title="Lead">
+
+<apex:pageblocktable value="{!leadList}" var="obj" title="Lead">
+<apex:column headervalue="Name" ><apex:outputlink value="/{!obj.Id}">{!obj.Name}</apex:outputlink></apex:column>
+<apex:column headervalue="Status" value="{!obj.Status}"/>
+<apex:column headervalue="Phone" value="{!obj.Phone}"/>
+<apex:column headervalue="Email" value="{!obj.Email}"/>
+<apex:column headervalue="CreatedBy" value="{!obj.CreatedBYId}"/>
+<apex:column headervalue="CreatedDate" value="{!obj.CreatedDate}"/>
+</apex:pageblocktable>
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="1" rendered="{!orender}" title="Opportunity">
+
+
+<apex:pageblocktable value="{!oppList}" var="obj" title="Opportunity">
+<apex:column headervalue="Name" value="{!obj.Name}"/>
+<apex:column headervalue="Id" value="{!obj.Id}"/>
+<apex:column headervalue="Account name" value="{!obj.Account.Name}"/>
+<apex:column headervalue="Stage" value="{!obj.StageName}"/>
+<apex:column headervalue="Amount" value="{!obj.Amount}"/>
+<apex:column headervalue="CreatedBy" value="{!obj.CreatedById}"/>
+<apex:column headervalue="CreatedDate" value="{!obj.CreatedDate}"/>
+<apex:column headervalue="ClosedDate" value="{!obj.CloseDate}"/>
+</apex:pageblocktable>
+
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="1" title="Contacts" rendered="{!corender}">
+
+<apex:pageblocktable value="{!conList}" var="obj" >
+<apex:column headervalue="Name" value="{!obj.Name}"/>
+<apex:column headervalue="Account name" value="{!obj.Account.Name}"/>
+<apex:column headervalue="Account Id" value="{!obj.Account.Id}"/>
+<apex:column headervalue="Email" value="{!obj.Email}"/>
+<apex:column headervalue="Title" value="{!obj.Title}"/>
+<apex:column headervalue="Phone" value="{!obj.Phone}"/>
+</apex:pageblocktable>
+
+
+</apex:pageblocksection>
+
+<apex:pageblocksection columns="1" title="Accounts" rendered="{!arender}">
+
+<apex:pageblocktable value="{!accList}" var="obj" >
+<apex:column headervalue="Name" value="{!obj.Name}"/>
+<apex:column headervalue="Type" value="{!obj.Type}"/>
+<apex:column headervalue="Rating" value="{!obj.Rating}"/>
+<apex:column headervalue="Phone" value="{!obj.Phone}"/>
+<apex:column headervalue="CreatedBy" value="{!obj.CreatedById}"/>
+<apex:column headervalue="CreatedDate" value="{!obj.CreatedDate}"/>
+
+</apex:pageblocktable>
+
+
+</apex:pageblocksection>
+</apex:outputpanel>
+</apex:pageblock>
+</apex:form>
+</apex:page>

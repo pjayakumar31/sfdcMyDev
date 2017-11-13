@@ -1,0 +1,10 @@
+<apex:page StandardController="Account">
+   <script> 
+       var previousOnload = window.onload; 
+       window.onload = function() { 
+                           if (previousOnload) { 
+                               previousOnload(); } 
+                           alert('loading...'+'{!Account.SLA__c}'); 
+                       } 
+   </script>
+</apex:page>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Pre Enrollment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PreEnrollment</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- PreEnrollment --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PNM Site --></label>
+        <name>PNMSite__c</name>
+        <relationshipLabel><!-- PreEnrollment --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Provider Name --></label>
+        <name>ProviderName__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
