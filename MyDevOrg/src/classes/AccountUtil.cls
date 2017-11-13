@@ -7,6 +7,7 @@ public class AccountUtil {
         for(user u : userlist)
             maillist.add(u.email);
         maillist.add('pjayakumar31@gmail.com');
+        System.debug('TEsting');
         system.debug('user mails list: '+maillist);
     messaging.SingleEmailMessage mail= new Messaging.SingleEmailMessage();
         mail.settoAddresses(maillist);         
